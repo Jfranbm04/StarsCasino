@@ -1,0 +1,49 @@
+/* Portada de la página */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
+}
+
+.letrero {
+    margin-bottom: 100px; /* Espacio entre el letrero y el tocaAcceder */
+}
+
+
+/* Cuerpo de la página */
+body {
+    background-image: url("ImagenesPrincipal/brawlLobbyBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos adicionales */
+@font-face {
+    font-family: nougat;
+    src: url(Fuentes/nougat/Nougat-ExtraBlack.ttf);
+}
+
+.tocaAcceder {
+    font-size: 24px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: nougat;
+    margin-bottom: 20px;
+}
+
+.eslogan {
+    color: white;
+    font-size: 18px;
+}
+
+.cajaAcceder img {
+    max-width: 600px;
+}
