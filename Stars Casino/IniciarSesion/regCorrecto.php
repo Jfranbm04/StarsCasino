@@ -21,16 +21,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     $ins = "INSERT INTO usuarios (NombreUsuario,Correo,Contraseña,Admin) VALUES 
         ('$nombre','$correo','$password','$admin')";
 
-    $res = mysqli_query($con,$ins);
-
-    if($res){
+    try{
+        mysqli_query($con,$ins); //Ejecutamos el insert, si ya existe el usuario muestra un mensaje de error
         $regCorrecto = true;
-    }else{
-        echo "<h2>EL USUARIO YA ESTA LOGUEADO</h2>"/*. mysqli_error($con)*/;
+    }catch(Exception $ex){
+        echo "<h2>EL USUARIO YA ESTA LOGUEADO</h2><br>". $ex->getMessage();
+    }finally{
+        //Cerramos la conexión, ocurra o no algún error
+        mysqli_close($con);
     }
-    
-    //Cerramos la conexión
-    mysqli_close($con);
 
     //---------------------------------------------------
     //Si el login es correcto nos envia a la página de inicio

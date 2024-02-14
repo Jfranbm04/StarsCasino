@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
         if(mysqli_num_rows($res) > 0){ //Si la consulta es correcta y nos devuelve algún registro, el usuario existe
             $loginCorrecto = true;
         }else{
-            echo "<h2>EL USUARIO NO ESTA REGISTRADO</h2>";
+            echo "<h2>EL CORREO O LA CONTRASEÑA SON INCORRECTOS</h2>";
         }
     }
     
