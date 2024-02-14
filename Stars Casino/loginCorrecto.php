@@ -5,18 +5,18 @@ include 'conexion.php'; //Importamos el fichero de conexion con la BD php
 if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario es POST
     
     //El usuario y la contraseña nunca van a estar vacíos
-    $usuario = $_POST['usuario'];
+    $correo = $_POST['correo'];
     $password = $_POST['contraseña'];
     $loginCorrecto = false;
 
     //Código comprobación login en la BD
-    $ins = "SELECT * FROM usuarios WHERE Correo = '".$usuario."' AND
+    $ins = "SELECT * FROM usuarios WHERE Correo = '".$correo."' AND
          Contraseña = '".$password."'";
 
     $res = mysqli_query($con,$ins);
 
     if($res){
-        if(mysqli_num_rows($res) > 0){
+        if(mysqli_num_rows($res) > 0){ //Si la consulta es correcta y nos devuelve algún registro, el usuario existe
             $loginCorrecto = true;
         }
     }
