@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,12 +8,12 @@
 
     <title>Login Casino Stars</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="../custom-scripts.js" defer></script>
   </head>
   <body>
     <section class="wrapper">
       <div class="form signup">
         <header>Signup</header>
+        
         <form method="POST" action="regCorrecto.php">
           <input type="text" placeholder="Name" name="nombre" required />
           <input type="text" placeholder="Email address" name="correo" required />
@@ -23,7 +22,7 @@
             <input type="checkbox" id="signupCheck" name="admin" />
             <label for="signupCheck">¿Quieres ser admin?</label>
           </div>
-          <button type="submit" value="Signup"></button>
+          <button type="submit">registrar</button>
         </form>
       </div>
 
@@ -33,22 +32,23 @@
           <input type="email" placeholder="Email address" name="correo" required />
           <input type="password" placeholder="Password" name="contraseña" required />
           <a href="#">Forgot password?</a>
-          <button type="submit" value="Login"></button>
+          <button type="submit"></button>
         </form>
       </div>
 
-      <script>
-        const wrapper = document.querySelector(".wrapper"),
-          signupHeader = document.querySelector(".signup header"),
-          loginHeader = document.querySelector(".login header");
-
-        loginHeader.addEventListener("click", () => {
-          wrapper.classList.add("active");
-        });
-        signupHeader.addEventListener("click", () => {
-          wrapper.classList.remove("active");
-        });
-      </script>
+      
     </section>
   </body>
+  <script>
+    const wrapper = document.querySelector(".wrapper"),
+      signupHeader = document.querySelector(".signup header"),
+      loginHeader = document.querySelector(".login header");
+
+    loginHeader.addEventListener("click", () => {
+      wrapper.classList.add("active");
+    });
+    signupHeader.addEventListener("click", () => {
+      wrapper.classList.remove("active");
+    });
+  </script>
 </html>

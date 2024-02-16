@@ -12,5 +12,4 @@ $con = mysqli_connect($server,$user,$password,$bd);
 if(!$con){
     die("Fallo de conexion: ".mysqli_connect_error());
 }
-
 ?>
