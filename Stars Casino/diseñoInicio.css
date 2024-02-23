@@ -1,0 +1,120 @@
+/* Estilo para el encabezado */
+.header {
+    position: relative; /* Establecemos la posición relativa para poder posicionar la imagen de forma absoluta dentro de este contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Estilo para el contenedor del logo */
+.logoWeb {
+    margin: 20px;
+
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+}
+
+/* Estilo para el logo */
+.logoWeb img {
+    width: 100px; 
+    height: auto;
+    align-items: center;
+}
+
+/* Estilo para el letrero */
+.letrero {
+    margin-right: 20px;
+}
+
+
+
+
+/* Cuerpo de la página */
+body {
+    background-image: url("ImagenesPrincipal/brawlLobbyBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 100vh;
+    margin: 0;
+}
+
+/*Nav y entrada*/
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    top:0;
+    position: fixed;
+    opacity: 0.7;
+}
+
+/* Botones interactivos */
+.boton {
+    background-color: #333;  
+    color: white; 
+    padding: 10px 20px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    border-radius: 5px; 
+    font-size: 18px; 
+    margin: 0px; 
+    cursor: pointer; 
+}  
+.boton-posicion {
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+} 
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+nav li {
+    display: inline-block;
+    margin-right: 50px;
+}
+  
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+/* Footer */
+footer {
+    margin-top: 0;
+    background-color: #333;
+    opacity: 0.9;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.quienesSomos {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.redes-sociales a {
+    color: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: color 0.2s ease-in-out;
+}
+  
+.redes-sociales a:hover {
+    color: #1da1f2;
+}
