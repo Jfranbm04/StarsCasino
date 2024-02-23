@@ -5,15 +5,19 @@
 body{
     background-image: url("../../ImagenesPrincipal/brawlLobbyBackground.jpg");
 }
+
+/* Estilos adicionales */
+@font-face {
+  font-family: nougat;
+  src: url(../../Fuentes/nougat/Nougat-ExtraBlack.ttf);
+}
     
     
-      
   .titulo{
     text-align: center;
     color:#fcfcfc;
     font-size: 38px;
-    font-family: Arial, Helvetica, sans-serif;
-      
+    font-family: nougat;
   }
   .volver {
     display: inline-block;
@@ -22,20 +26,43 @@ body{
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    font-family: nougat;
   }
-  .container{
+
+  .buttons{
     background-color: rgb(255, 255, 255);
     border-radius: 30px;
     display: flex;
+    justify-content: center;
+    padding: 5%;
     align-items: center;
     flex-direction: column;
     margin: 6em auto;
     width: 60%;
     height: auto;
-    display: flex;
   }
-  
-  
+
+  .buttons img {
+    display: flex;
+    justify-content: flex-start;
+    width: 110px;
+    height: auto;
+    padding: 2%;
+  }
+
+  .bCrud {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1da1f2;
+    font-style: italic;
+    border-radius: 30px;
+    width: 800px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .bCrud h2 {
+    font-family: nougat;
+  }
   
   /* Enlaces */
   a {
