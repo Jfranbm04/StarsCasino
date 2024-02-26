@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     //---------------------------------------------------
     //Si el login es correcto nos envia a la página de inicio
     if($loginCorrecto){
-        header("Location: ../inicio.html");
+        header("Location: ../pantallaPrincipal.html");
         exit();
     }
 }

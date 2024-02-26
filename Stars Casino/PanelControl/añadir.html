@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Juanfran/Jorge" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/diseñoAñadir.css">
+    
+    <link rel="icon" href="../ImagenesPrincipal/IconoStarsCasino.png" type="image/png">
+    <title>Añadir Brawler</title>
+</head>
+<body>
+    <a class="volver"  href="panelControl.html">VOLVER AL PANEL</a>
+    <header>
+        <p class="titulo">AÑADIR BRAWLER</p>
+    </header>
+
+    
+    <!-- Formulario-->
+  <div class="contact_form">
+
+    <div class="formulario">      
+        <h3>AÑADE UN BRAWLER</h3>
+
+            <!-- Cambiar ruta a añadirBrawler.php -->
+          <!-- <form action="formularioContacto.php" method="post"> -->     
+
+            
+                <p>
+                  <label for="nombre" class="colocar_nombre">NOMBRE
+                  </label>
+                    <input type="text" name="introducir_nombre" id="nombre"  placeholder="Escribe el nombre">
+                </p>
+              
+                <p>
+                  <label for="Calidad" class="colocar_Calidad">Calidad
+                  </label>
+                    <input type="text" name="introducir_Calidad" id="Calidad"  placeholder="Escribe la Calidad">
+                </p>
+            
+                <p>
+                  <label for="Nivel" class="colocar_Nivel">Nivel
+                  </label>
+                    <input type="text" name="introducir_Nivel" id="Nivel" placeholder="Escribe el Nivel">
+                </p>       
+
+                <!-- Cuando se envía el brawler, se va al panel directamente -->
+                
+                <a href="panelControl.html"><button type="submit" name="enviar_formulario" id="enviar">
+                    <p>AÑADIR BRAWLER</p>
+                </button></a>
+
+                <p class="aviso">
+                  <span class="obligatorio"> * </span>los campos son obligatorios.
+                </p>          
+            
+          </form>
+    </div>  
+  </div>
+
+
+</body>
+</html> 

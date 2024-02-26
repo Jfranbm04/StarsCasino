@@ -1,0 +1,84 @@
+
+
+
+/* Contenedores generales*/
+body{
+    background-image: url("../../ImagenesPrincipal/brawlLobbyBackground.jpg");
+}
+
+/* Estilos adicionales */
+@font-face {
+  font-family: nougat;
+  src: url(../../Fuentes/nougat/Nougat-ExtraBlack.ttf);
+}
+@font-face {
+    font-family: LilitaOne;
+    src: url(../../Fuentes/Lilita_One/LilitaOne-Regular.ttf);
+}
+
+
+  .titulo{
+    text-align: center;
+    color:#fcfcfc;
+    font-size: 38px;
+    font-family: LilitaOne;
+  }
+  .volver {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: LilitaOne;
+  }
+
+    .contact_form{
+        background-color: #fcfcfc;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        padding: 100px;
+        align-items: center;
+        flex-direction: column;
+        margin: 6em auto;
+        width: 30%;
+        height: auto;
+        font-size: 20px;
+    }
+
+  .formulario{
+    font-family: LilitaOne;
+    color:#000000;
+  }
+
+  input{
+    background-color: #fbfbfb; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px;  
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+  }
+
+  button{
+    padding-left: 5px;
+    padding-right: 5px;   
+    margin-bottom: 20px; 
+    margin-top: 10px;   
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+    border-style: solid; 
+    border-radius: 10px;  
+    width: 420px;   
+    cursor: pointer;
+    font-family: LilitaOne;
+    font-size: 20px;
+  }
+  
+  
+  button p{
+    color: #fff; 
+  }

@@ -11,13 +11,16 @@ body{
   font-family: nougat;
   src: url(../../Fuentes/nougat/Nougat-ExtraBlack.ttf);
 }
-    
+@font-face {
+  font-family: LilitaOne;
+  src: url(../../Fuentes/Lilita_One/LilitaOne-Regular.ttf);
+}   
     
   .titulo{
     text-align: center;
     color:#fcfcfc;
     font-size: 38px;
-    font-family: nougat;
+    font-family: LilitaOne;
   }
   .volver {
     display: inline-block;
@@ -26,7 +29,7 @@ body{
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-family: nougat;
+    font-family: LilitaOne;
   }
 
   .buttons{
@@ -34,7 +37,7 @@ body{
     border-radius: 30px;
     display: flex;
     justify-content: center;
-    padding: 5%;
+    padding: 100px;
     align-items: center;
     flex-direction: column;
     margin: 6em auto;
@@ -51,18 +54,20 @@ body{
   }
 
   .bCrud {
+    /* Cambios para centrar el texto y hacerlo más grande */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     background-color: #1da1f2;
-    font-style: italic;
     border-radius: 30px;
     width: 800px;
-    font-family: "Poppins", sans-serif;
+    font-family: nougat;
+    margin: 10px 0; /* Separación vertical de 10px */
   }
 
-  .bCrud h2 {
-    font-family: nougat;
-  }
+.bCrud h2 {
+    font-size: 24px;
+}
   
   /* Enlaces */
   a {
