@@ -1,59 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Juanfran/Jorge" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/diseñoAñadir.css">
-    
-    <link rel="icon" href="../ImagenesPrincipal/IconoStarsCasino.png" type="image/png">
-    <title>Modificar Brawler</title>
-</head>
-<body>
-    <a class="volver"  href="panelControl.html">VOLVER AL PANEL</a>
-    <header>
-        <p class="titulo">MODIFICAR BRAWLER</p>
-    </header>
 
-    
-    <!-- Formulario-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Juanfran/Jorge" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo/diseñoAñadir.css">
+
+  <link rel="icon" href="../ImagenesPrincipal/IconoStarsCasino.png" type="image/png">
+  <title>Modificar Brawler</title>
+</head>
+
+<body>
+  <a class="volver" href="panelControl.html">VOLVER AL PANEL</a>
+  <header>
+    <p class="titulo">MODIFICAR BRAWLER</p>
+  </header>
+
+
+  <!-- Formulario-->
   <div class="contact_form">
 
-    <div class="formulario">      
-        <h3>Modifica un brawler</h3>
+    <div class="formulario">
+      <h3>Modifica un brawler</h3>
 
-            <!-- Cambiar ruta a añadirBrawler.php -->
-          <!-- <form action="formularioContacto.php" method="post"> -->     
+      <!-- Cambiar ruta a añadirBrawler.php -->
+      <!-- <form action="formularioContacto.php" method="post"> -->
 
-            
-                <p>
-                  <label for="nombre" class="colocar_nombre">Nombre
-                  </label>
-                    <input type="text" name="introducir_nombre" id="nombre"  placeholder="Escribe el nombre">
-                </p>
-              
-                <p>
-                  <label for="Calidad" class="colocar_Calidad">Calidad
-                  </label>
-                    <input type="text" name="introducir_Calidad" id="Calidad"  placeholder="Escribe la Calidad">
-                </p>
-            
-                <p>
-                  <label for="Nivel" class="colocar_Nivel">Nivel
-                  </label>
-                    <input type="text" name="introducir_Nivel" id="Nivel" placeholder="Escribe el Nivel">
-                </p>       
 
-                <button type="submit" name="enviar_formulario" id="enviar"><p>Modificar Brawler</p></button>
+      <p>
+        <label for="nombre" class="colocar_nombre">Nombre:
+        </label>
+        <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe el nombre">
+      </p>
 
-                <p class="aviso">
-                  <span class="obligatorio"> * </span>los campos son obligatorios.
-                </p>          
-            
-          </form>
-    </div>  
+      <p>
+        <label for="calidad" class="colocar_calidad">Calidad:</label>
+        <select name="introducir_calidad" id="calidad">
+            <option value="comun">Común</option>
+            <option value="raro">Raro</option>
+            <option value="especial">Especial</option>
+            <option value="epico">Épico</option>
+            <option value="mitico">Mítico</option>
+            <option value="legendario">Legendario</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="Nivel" class="colocar_Nivel">Nivel:
+        </label>
+        <input type="number" name="introducir_nivel" id="nivel" min="1" max="12" placeholder="Selecciona un nivel del 1 al 11"
+          required>
+      </p>
+
+      <!-- Script para que el nivel sea 12 como máximo -->
+      <script>
+        // Obtener el elemento de entrada del nivel
+        var nivelInput = document.getElementById("nivel");
+
+        // Listener para cuando se escribe un número
+        nivelInput.addEventListener("input", function () {
+          // Obtener el valor actual del campo de entrada
+          var valor = parseInt(nivelInput.value);
+          if (valor > 11) {
+            // Si es mayor que 11, número = 11
+            nivelInput.value = 11;
+          }if (valor < 1) {
+            // Si es menor que 1, número = 1
+            nivelInput.value = 1;
+          }
+        });
+      </script>
+
+      <button type="submit" name="enviar_formulario" id="enviar">
+        <p>Modificar Brawler</p>
+      </button>
+
+      <p class="aviso">
+        <span class="obligatorio"> * </span>los campos son obligatorios.
+      </p>
+
+      </form>
+    </div>
   </div>
 
 
 </body>
-</html> 
+
+</html>

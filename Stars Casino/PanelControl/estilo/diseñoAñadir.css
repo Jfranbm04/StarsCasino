@@ -17,6 +17,11 @@ body{
 }
 
 
+/* Estilo cuando el selector está enfocado */
+select:focus {
+  border-color: #333;
+}
+
   .titulo{
     text-align: center;
     color:#fcfcfc;
@@ -52,9 +57,24 @@ body{
     color:#000000;
   }
 
+  select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+  }
+  
+  select option {
+    background-color: #fff;
+  }
+
   input{
-    background-color: #fbfbfb; 
-    width: 408px; 
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 308px; 
     height: 40px; 
     border-radius: 5px;  
     border-style: solid; 
@@ -64,6 +84,7 @@ body{
     margin-bottom: 20px; 
   }
 
+  /* Botón de añadir/borrar/modificar */
   button{
     padding-left: 5px;
     padding-right: 5px;   
