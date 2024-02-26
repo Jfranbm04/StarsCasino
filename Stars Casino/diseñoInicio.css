@@ -1,3 +1,14 @@
+
+/* Estilos adicionales */
+@font-face {
+    font-family: nougat;
+    src: url(../../Fuentes/nougat/Nougat-ExtraBlack.ttf);
+}
+@font-face {
+      font-family: LilitaOne;
+      src: url(../../Fuentes/Lilita_One/LilitaOne-Regular.ttf);
+}
+
 /* Estilo para el encabezado */
 .header {
     position: relative; /* Establecemos la posición relativa para poder posicionar la imagen de forma absoluta dentro de este contenedor */
@@ -30,12 +41,10 @@
 }
 
 
-
-
 /* Cuerpo de la página */
 body {
     background-image: url("ImagenesPrincipal/brawlLobbyBackground.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     
     height: 100vh;
@@ -50,9 +59,10 @@ nav {
     top:0;
     position: fixed;
     opacity: 0.7;
+    font-family: LilitaOne
 }
 
-/* Botones interactivos */
+/* Botones nav */
 .boton {
     background-color: #333;  
     color: white; 
@@ -62,7 +72,6 @@ nav {
     display: inline-block;
     border-radius: 5px; 
     font-size: 18px; 
-    margin: 0px; 
     cursor: pointer; 
 }  
 .boton-posicion {
@@ -88,33 +97,106 @@ nav a {
     text-decoration: none;
 }
 
+/* Cuerpo de la página */ 
+h1{
+    text-align: center;
+    color:#fcfcfc;
+    font-size: 38px;
+    font-family: nougat;
+}
+
+
+/* Cards */
+.container{
+    width: 70%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; 
+    margin: auto;
+    background-color: #fff;
+    padding: 20px; 
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-bottom: 2%;
+}
+
+.container .card{
+    max-width: 330px; 
+    height: auto; 
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    
+}
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+.container .card img{
+    width: 330px;
+    height: auto;
+}
+
+.container .card h4{
+    font-weight: 600;
+}
+
+.container .card p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    transition: all 0.25s;
+
+}
+
+.container .card a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
+}
 
 
 
-/* Footer */
+
+
+
+/* Footer */ 
 footer {
     margin-top: 0;
+    bottom: 0;
     background-color: #333;
     opacity: 0.9;
     color: #fff;
     padding: 20px;
     text-align: center;
-}
-
-.quienesSomos {
+  }
+  .quienesSomos{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     margin: 5px;
-}
-
-.redes-sociales a {
+  }
+  
+  .redes-sociales a {
     color: #fff;
     display: inline-block;
     margin-right: 10px;
     font-size: 20px;
     transition: color 0.2s ease-in-out;
-}
+  }
   
-.redes-sociales a:hover {
+  .redes-sociales a:hover {
     color: #1da1f2;
-}
+  }
+  
+  footer img{
+    width: 4%;
+    margin-top: -20px;
+    height: auto;
+    float: right;
+    margin-left: 20px;
+  }
