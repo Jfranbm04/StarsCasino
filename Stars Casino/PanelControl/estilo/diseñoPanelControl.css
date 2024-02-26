@@ -54,15 +54,15 @@ body{
   }
 
   .bCrud {
-    /* Cambios para centrar el texto y hacerlo más grande */
+    
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center; 
+    align-items: center; 
     background-color: #1da1f2;
     border-radius: 30px;
     width: 800px;
     font-family: nougat;
-    margin: 10px 0; /* Separación vertical de 10px */
+    margin: 10px; 
   }
 
 .bCrud h2 {
