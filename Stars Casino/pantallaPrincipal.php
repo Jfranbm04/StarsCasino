@@ -52,53 +52,59 @@ $rol = $_SESSION['rol'];
     
     <div class="container">
        
-      <?php
-        // Conexión a la base de datos y consulta de los personajes
-        include 'conexion.php';
+        <?php
+            // Conexión a la base de datos y consulta de los personajes
+            include 'conexion.php';
 
-        $sql = "SELECT * FROM brawler";
-        $result = $con->query($sql);
+            $sql = "SELECT * FROM brawler";
+            $result = $con->query($sql);
 
-        // Itero sobre los resultados y muestro cada tarjeta de personaje
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo '<div class="card">';
-                echo '<h4>' . $row["Nombre"] . '</h4>';
-                echo '<p>Calidad: ' . $row["Calidad"] . '</p>';
-                echo '<p>Nivel: ' . $row["Nivel"] . '</p>';
+            // Itero sobre los resultados y muestro cada tarjeta de personaje
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo '<div class="card">';
+                    echo '<h4>' . $row["Nombre"] . '</h4>';
+                    echo '<p>Calidad: ' . $row["Calidad"] . '</p>';
+                    echo '<p>Nivel: ' . $row["Nivel"] . '</p>';
 
-                // Aqui podríamos añadir la imagen del brawler 
-                echo '</div>';
+                    // Aqui podríamos añadir la imagen del brawler 
+                    // Mostrar la imagen del brawler
+                     if(isset($row['imagen'])){
+                        echo '<img src="data:image/jpeg;base64,'.base64_encode($row['imagen']).'" alt="'.$row['Nombre'].'">';
+                     }else{
+                        echo "uwu";
+                     }
+                    
+
+                    echo '</div>';
+                }
+            } else {
+                echo "No hay brawlers en la colección";
             }
-        } else {
-            echo "No hay brawlers en la colección";
-        }
 
-        // Cerrar conexión
-        if ($con) {
-            $con->close();
-        }
-    ?>
+            // Cerrar conexión
+            if ($con) {
+                $con->close();
+            }
+        ?>
  
   </div>
 
 	</main>
 
-<!--Mostrar Cookies-->
-<?php
-// Mostrar la información del usuario
-echo "<p>Bienvenido, $correo</p>";
-if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
-      echo "<p>Rol: Administrador</p>";
-      // Aquí puedes mostrar funcionalidades adicionales para administradores
-} else { //En caso contrario, es un usuario sin privilegios
-      echo "<p>Rol: Usuario</p>";
-      // Aquí puedes mostrar funcionalidades específicas para usuarios normales
-      
-}
-?>
-
-
+    <!--Mostrar Cookies-->
+    <?php
+        // Mostrar la información del usuario
+        echo "<p>Bienvenido, $correo</p>";
+        if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
+            echo "<p>Rol: Administrador</p>";
+            // Aquí puedes mostrar funcionalidades adicionales para administradores
+        } else { //En caso contrario, es un usuario sin privilegios
+            echo "<p>Rol: Usuario</p>";
+            // Aquí puedes mostrar funcionalidades específicas para usuarios normales
+            
+        }
+    ?>
 
 
   <!-- Footer -->
