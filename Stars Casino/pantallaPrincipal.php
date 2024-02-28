@@ -24,10 +24,11 @@
     <!-- Barra superior nav -->
     <nav class="menu">
         <ul>
-            <li><a href=""><!-- jorge guapo-->AÑADIR SALDO</a></li>
+            <li><a href=""><!-- jorge guapo -->AÑADIR SALDO</a></li>    
             <li><a href="Contacto\Contacto.html">CONTACTO</a></li>
             <li><a href="PanelControl/panelControl.html">PANEL DE CONTROL</a></li>
-        </ul>  
+            <li><a href="EntradaScreen.html">CERRAR SESION</a></li>
+        </ul> 
     </nav>
 
 	<main>
@@ -71,8 +72,32 @@
 	</main>
 
     <!--Mostrar Cookies-->
-    <p>Usuario: <?php echo $_COOKIE['correo_user'];
-        echo $_COOKIE['rol']; ?></p>
+<?php
+session_start(); // Iniciar sesión PHP si no lo has hecho antes
+
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION['correo_user']) && isset($_SESSION['rol'])) {
+    $correo = $_SESSION['correo_user'];
+    $rol = $_SESSION['rol'];
+    // Mostrar la información del usuario
+    echo "<p>Bienvenido, $correo</p>";
+    if ($rol == 1) {
+        echo "<p>Rol: Administrador</p>";
+        // Aquí puedes mostrar funcionalidades adicionales para administradores
+    } else {
+        echo "<p>Rol: Usuario</p>";
+        // Aquí puedes mostrar funcionalidades específicas para usuarios normales
+    }
+    // También puedes mostrar cualquier otra información específica del usuario
+} else {
+    // Si el usuario no ha iniciado sesión, redirigirlo al formulario de inicio de sesión
+    header("Location: formularioInicioSesion.php");
+    exit();
+}
+?>
+
+
+
 
   <!-- Footer -->
 	<footer>

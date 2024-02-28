@@ -1,4 +1,5 @@
 <?php
+session_start(); // Iniciar sesión PHP
 
 include '../conexion.php'; //Importamos el fichero de conexion con la BD php
 
@@ -16,11 +17,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     $res = mysqli_query($con,$ins);
 
     if($res){
+        // Cookies para almacenar los datos del usuario
         if(mysqli_num_rows($res) > 0){ //Si la consulta es correcta y nos devuelve algún registro, el usuario existe
             $loginCorrecto = true;
-            //Creamos la cookie
-            setcookie("correo_user", "hola", time() + 86400, "/"); // Cookie válida por 1 día
-            setcookie("rol", "user", time() + 86400, "/"); // Cookie válida por 1 día
+            // Guardar datos de usuario en variables de sesión
+            $_SESSION['correo_user'] = $correo;
+            $_SESSION['rol'] = "user"; // Suponiendo que todos los usuarios tienen el rol de "user"
+
+
         }else{
             echo "<html>";
             echo "<head>";
@@ -49,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     //---------------------------------------------------
     //Si el login es correcto nos envia a la página de inicio
     if($loginCorrecto){
-        header("Location: ../pantallaPrincipal.html");
+        header("Location: ../pantallaPrincipal.php");
         exit();
     }
 }

@@ -7,6 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el método de nuestro formulario 
     $nivel = $_POST['nivel'];
     $brawlCorrecto = false;
 
+    
     //Verificar si se ha enviado correctamente el archivo de imagen
     if(isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
         //Obtener los datos de la imagen subida
@@ -16,6 +17,21 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el método de nuestro formulario 
 
         //Leer el archivo de imagen en modo binario
         $imagen_binario = file_get_contents($imagen_tmp);
+
+
+
+        /* LO DE ARRIBA ES EL PROCESO PARA AÑADIR LA IMAGEN A LA BASE DE DATOS */
+         /* Alomejor para que funcione el insert de la imagen, tenemos que crear una carpeta de imagenes donde van a estar todas las imágenes que tengamos.
+            Entonces tendríamos que almacenar la ruta del fichero en la base de datos y al recogerlo que acceda a la carpeta de imagenes. 
+            He sacao la info de aqui xd:    https://www.youtube.com/watch?v=sMbyhEXBaAI&ab_channel=Gesti%C3%B3nRt24
+         */
+
+
+
+
+
+
+
 
         //Código insertar brawler en la BD, incluyendo la imagen
         $ins = "INSERT INTO brawler (Nombre, Calidad, Nivel, imagen) VALUES ('$nombre','$calidad','$nivel','$imagen_binario')";
