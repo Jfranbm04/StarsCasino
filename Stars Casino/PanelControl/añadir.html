@@ -24,34 +24,37 @@
     <div class="formulario">
       <h3>AÑADE UN BRAWLER</h3>
 
-      <!-- Cambiar ruta a añadirBrawler.php -->
-      <!-- <form action="formularioContacto.php" method="post"> -->
+      <form action="añadirBrawler.php" method="POST">
+        <p>
+          <label for="nombre" class="colocar_nombre">Nombre:</label>
+          <input type="text" name="nombre" placeholder="Escribe el nombre" required>
+        </p>
 
+        <p>
+          <label for="calidad" class="colocar_calidad">Calidad:</label>
+          <select name="calidad">
+              <option value="comun">Común</option>
+              <option value="especial">Especial</option>
+              <option value="raro">Raro</option>
+              <option value="epico">Épico</option>
+              <option value="mitico">Mítico</option>
+              <option value="legendario">Legendario</option>
+          </select>
+        </p>
 
-      <p>
-        <label for="nombre" class="colocar_nombre">Nombre:
-        </label>
-        <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe el nombre">
-      </p>
+        <p>
+          <label for="Nivel" class="colocar_Nivel">Nivel:</label>
+          <input type="number" name="nivel" id="nivel" min="1" max="12" placeholder="Selecciona un nivel del 1 al 11" required>
+        </p>
 
-      <p>
-        <label for="calidad" class="colocar_calidad">Calidad:</label>
-        <select name="introducir_calidad" id="calidad">
-            <option value="comun">Común</option>
-            <option value="especial">Especial</option>
-            <option value="raro">Raro</option>
-            <option value="epico">Épico</option>
-            <option value="mitico">Mítico</option>
-            <option value="legendario">Legendario</option>
-        </select>
-      </p>
+        <!-- Cuando se envía el brawler, se va al panel directamente -->
+        <button type="submit" name="enviar_formulario" id="enviar"><p>AÑADIR BRAWLER</p></button>
 
-      <p>
-        <label for="Nivel" class="colocar_Nivel">Nivel:
-        </label>
-        <input type="number" name="introducir_nivel" id="nivel" min="1" max="12" placeholder="Selecciona un nivel del 1 al 11"
-          required>
-      </p>
+        <p class="aviso">
+          <span class="obligatorio"> * </span>los campos son obligatorios.
+        </p>
+      </form>
+      
 
       <!-- Script para que el nivel sea 12 como máximo -->
       <script>
@@ -72,18 +75,6 @@
         });
       </script>
 
-
-      <!-- Cuando se envía el brawler, se va al panel directamente -->
-
-      <a href="panelControl.html"><button type="submit" name="enviar_formulario" id="enviar">
-          <p>AÑADIR BRAWLER</p>
-        </button></a>
-
-      <p class="aviso">
-        <span class="obligatorio"> * </span>los campos son obligatorios.
-      </p>
-
-      </form>
     </div>
   </div>
 

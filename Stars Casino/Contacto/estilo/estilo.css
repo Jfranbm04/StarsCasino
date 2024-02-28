@@ -79,3 +79,10 @@ button{
 button p{
   color: #fff; 
 }
+
+/* Evita que el textarea sea redimensionable */
+textarea {
+  resize: none;
+  max-height: 100px; /* Establece una altura máxima */
+  max-width: 200px; /* Ajusta el ancho según sea necesario */
+}

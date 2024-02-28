@@ -25,11 +25,10 @@
             <!-- Cambiar ruta a añadirBrawler.php -->
           <!-- <form action="formularioContacto.php" method="post"> -->     
 
-            
+          <form action="borrarBrawler.php" method="POST">  
                 <p>
-                  <label for="nombre" class="colocar_nombre">Nombre:
-                  </label>
-                    <input type="text" name="introducir_nombre" id="nombre"  placeholder="Escribe el nombre">
+                  <label for="nombre" class="colocar_nombre">Nombre:</label>
+                  <input type="text" name="nombre" placeholder="Escribe el nombre" required>
                 </p>
 
                 <button type="submit" name="enviar_formulario" id="enviar"><p>Eliminar Brawler</p></button>
@@ -37,7 +36,6 @@
                 <p class="aviso">
                   <span class="obligatorio"> * </span>los campos son obligatorios.
                 </p>          
-            
           </form>
     </div>  
   </div>
