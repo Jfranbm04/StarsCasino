@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     $imagenBinario = addslashes(file_get_contents($imagenTmp));
 
     // Código insertar brawler en la BD
-    $ins = "INSERT INTO brawler (Nombre, Calidad, Nivel, Imagen) VALUES ('$nombre', '$calidad', '$nivel', '$imagenBinario')";
+    $ins = "INSERT INTO brawler (Nombre, Calidad, Nivel, imagen) VALUES ('$nombre', '$calidad', '$nivel', '$imagenBinario')";
 
     try {
         mysqli_query($con, $ins); // Ejecutamos el insert, si ya existe el brawler muestra un mensaje de error

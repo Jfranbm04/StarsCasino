@@ -47,14 +47,28 @@ $rol = $_SESSION['rol'];
         <!--Mostrar Cookies-->
         <div class="cookies">
         <?php
-            // Mostrar la información del usuario
-            echo "<p style='font-size: 18px;'>Bienvenido, $correo</p>";
-            if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
-                echo "<p style='font-size: 18px;'>Rol: Administrador</p>";
+            // Conexión a la base de datos y consulta de los usuarios
+            include 'conexion.php';
 
-            } else { //En caso contrario, es un usuario sin privilegios
-                echo "<p style='font-size: 18px;'>Rol: Usuario</p>";
-                
+            // Mostrar la información del usuario
+            //Saco el nombre del usuario y lo muestro
+            //Consulta select
+            $select = "SELECT * FROM usuarios WHERE Correo = '$correo'";
+            $res = mysqli_query($con,$select);
+
+            if($res){
+                if(mysqli_num_rows($res) > 0){ //Si la consulta es correcta y nos devuelve algún registro, el usuario existe            
+                    $row = mysqli_fetch_row($res); //Estoy extrayendo el registro completo de la consulta select
+                    $nombre = $row[0]; //Obtengo el valor del nombre de ese registro 
+
+                    // Liberar recursos
+                    mysqli_free_result($res);
+
+                    echo "<p style='font-size: 18px;'>Bienvenido, $nombre</p>";
+                    if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
+                        echo "<p style='font-size: 18px;'>Rol: Administrador</p>";
+                    }
+                }
             }
         ?>
     </div>

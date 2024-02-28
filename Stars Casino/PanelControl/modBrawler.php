@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { // Si el método de nuestro formular
     $imagenBinario = addslashes(file_get_contents($imagenTmp));
 
     // Código para modificar brawler en la BD
-    $ins = "UPDATE brawler SET Calidad = '$calidad', Nivel = '$nivel', Imagen = '$imagenBinario' 
+    $ins = "UPDATE brawler SET Calidad = '$calidad', Nivel = '$nivel', imagen = '$imagenBinario' 
             WHERE Nombre = '$nombre'";
 
     $res = mysqli_query($con, $ins);
