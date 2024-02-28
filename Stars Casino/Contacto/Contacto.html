@@ -22,37 +22,37 @@
         <h3>Manda aqui tu mensaje y te ayudaremos cuanto antes</h3>
 
 
-          <form action="Contacto.php" method="post">       
+          <form action="Contacto.php" method="POST">       
 
             
                 <p>
                   <label for="nombre" class="colocar_nombre">Nombre
                   </label>
-                    <input type="text" name="introducir_nombre" id="nombre"  placeholder="Escribe tu nombre">
+                    <input type="text" name="nombre"  placeholder="Escribe tu nombre" required>
                 </p>
               
                 <p>
                   <label for="email" class="colocar_email">Email
                   </label>
-                    <input type="email" name="introducir_email" id="email"  placeholder="Escribe tu Email">
+                    <input type="email" name="email"  placeholder="Escribe tu Email" required>
                 </p>
             
                 <p>
                   <label for="telefone" class="colocar_telefono">Teléfono
                   </label>
-                    <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                    <input type="tel" name="telefono" placeholder="Escribe tu teléfono" required>
                 </p>       
               
                 <p>
                   <label for="asunto" class="colocar_asunto">Asunto
                   </label>
-                    <input type="text" name="introducir_asunto" id="asunto" placeholder="Escribe un asunto">
+                    <input type="text" name="asunto" placeholder="Escribe un asunto" required>
                 </p>    
               
                 <p>
                   <label for="mensaje" class="colocar_mensaje">Mensaje
                   </label>                     
-                  <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" placeholder="Escribe tu comentario"></textarea> 
+                  <textarea name="mensaje" class="texto_mensaje" placeholder="Escribe tu comentario" required></textarea> 
                 </p>                    
               
                 <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
