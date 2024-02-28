@@ -16,14 +16,49 @@ $rol = $_SESSION['rol'];
     <link rel="icon" href="ImagenesPrincipal/IconoStarsCasino.png" type="image/png">
     <link rel="stylesheet" href="diseñoPrincipal.css">
     <title>Pantalla Principal</title>
+    <style>
+        @font-face {
+            font-family: 'LilitaOne';
+            src: url('Fuentes/Lilita_One/LilitaOne-Regular.ttf');
+        }
+
+        .cookies {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: 'LilitaOne'; 
+            margin-top: 140px;
+            margin-right: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+
+
 </head>
 <body>
     <!-- Portada página -->
     <header class="header">
-      <div class="logoWeb">
-          <img src="ImagenesPrincipal\Star_Casino_Logo.jpeg" alt="Logo del casino">
-      </div>
-      
+        <div class="logoWeb">
+            <img src="ImagenesPrincipal\Star_Casino_Logo.jpeg" alt="Logo del casino">
+        </div>
+
+        <!--Mostrar Cookies-->
+        <div class="cookies">
+        <?php
+            // Mostrar la información del usuario
+            echo "<p style='font-size: 18px;'>Bienvenido, $correo</p>";
+            if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
+                echo "<p style='font-size: 18px;'>Rol: Administrador</p>";
+
+            } else { //En caso contrario, es un usuario sin privilegios
+                echo "<p style='font-size: 18px;'>Rol: Usuario</p>";
+                
+            }
+        ?>
+    </div>
+
       <div class="letrero">
           <img src="ImagenesPrincipal/starsCasinoLetrero.png" alt="Letrero del casino">
       </div>
@@ -86,24 +121,9 @@ $rol = $_SESSION['rol'];
             }
         ?>
  
-  </div>
+    </div>
 
 	</main>
-
-    <!--Mostrar Cookies-->
-    <?php
-        // Mostrar la información del usuario
-        echo "<p>Bienvenido, $correo</p>";
-        if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
-            echo "<p>Rol: Administrador</p>";
-            // Aquí puedes mostrar funcionalidades adicionales para administradores
-        } else { //En caso contrario, es un usuario sin privilegios
-            echo "<p>Rol: Usuario</p>";
-            // Aquí puedes mostrar funcionalidades específicas para usuarios normales
-            
-        }
-    ?>
-
 
   <!-- Footer -->
 	<footer>

@@ -22,7 +22,6 @@
 /* Estilo para el contenedor del logo */
 .logoWeb {
     margin: 20px;
-
     position: absolute; 
     top: 0; 
     right: 0; 
@@ -33,7 +32,22 @@
     width: 100px; 
     height: auto;
     align-items: center;
+    border-radius: 10px;
 }
+
+/* Estilo para la info que dan las cookies */
+.cookies{
+    background-color: white; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-family: LilitaOne; 
+    margin-top: 140px; 
+    margin-right: 20px;
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+}
+
 
 /* Estilo para el letrero */
 .letrero {
@@ -59,7 +73,8 @@ nav {
     top:0;
     position: fixed;
     opacity: 0.7;
-    font-family: LilitaOne
+    font-family: LilitaOne;
+    border-radius: 10px;
 }
 
 /* Botones nav */
@@ -101,8 +116,8 @@ nav a {
 h1{
     text-align: center;
     color:#fcfcfc;
-    font-size: 38px;
-    font-family: nougat;
+    font-size: 40px;
+    font-family: LilitaOne;
 }
 
 
