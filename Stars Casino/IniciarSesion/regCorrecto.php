@@ -28,7 +28,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
         $regCorrecto = true;
         // Guardar datos de usuario en variables de sesión
         $_SESSION['correo_user'] = $correo;
-        $_SESSION['rol'] = "user"; // Suponiendo que todos los usuarios tienen el rol de "user"
+        //Rol de usuario
+        $rol = "user";
+        if($admin == 1){
+            $rol = "admin";
+        }
+        $_SESSION['rol'] = $rol; // Le asignamos el rol que tenga ese usuario
         
     }catch(Exception $ex){
         echo "<html>";

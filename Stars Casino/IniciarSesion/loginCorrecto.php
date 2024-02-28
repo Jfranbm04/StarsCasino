@@ -22,7 +22,21 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
             $loginCorrecto = true;
             // Guardar datos de usuario en variables de sesión
             $_SESSION['correo_user'] = $correo;
-            $_SESSION['rol'] = "user"; // Suponiendo que todos los usuarios tienen el rol de "user"
+
+            //Consulta a la base de datos
+            //Necesito extraer el campo Admin
+            $row = mysqli_fetch_row($res); //Estoy extrayendo el registro completo de la consulta select
+            $admin = $row[3]; //Obtengo el valor de admin de ese registro 
+
+            // Liberar recursos
+            mysqli_free_result($res);
+            
+            //Rol de usuario
+            $rol = "user";
+            if($admin == 1){
+                $rol = "admin";
+            }
+            $_SESSION['rol'] = $rol; // Le asignamos el rol que tenga ese usuario
 
 
         }else{

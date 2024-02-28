@@ -81,12 +81,13 @@ if (isset($_SESSION['correo_user']) && isset($_SESSION['rol'])) {
     $rol = $_SESSION['rol'];
     // Mostrar la información del usuario
     echo "<p>Bienvenido, $correo</p>";
-    if ($rol == 1) {
+    if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
         echo "<p>Rol: Administrador</p>";
         // Aquí puedes mostrar funcionalidades adicionales para administradores
-    } else {
+    } else { //En caso contrario, es un usuario sin privilegios
         echo "<p>Rol: Usuario</p>";
         // Aquí puedes mostrar funcionalidades específicas para usuarios normales
+        
     }
     // También puedes mostrar cualquier otra información específica del usuario
 } else {
