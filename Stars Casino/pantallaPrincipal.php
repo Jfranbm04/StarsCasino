@@ -71,8 +71,6 @@ $rol = $_SESSION['rol'];
                     // Mostrar la imagen del brawler
                      if(isset($row['imagen'])){
                         echo '<img src="data:image/jpeg;base64,'.base64_encode($row['imagen']).'" alt="'.$row['Nombre'].'">';
-                     }else{
-                        echo "uwu";
                      }
                     
 
