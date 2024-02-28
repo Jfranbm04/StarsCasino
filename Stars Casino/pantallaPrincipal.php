@@ -32,7 +32,7 @@ $rol = $_SESSION['rol'];
     <!-- Barra superior nav -->
     <nav class="menu">
         <ul>
-            <li><a href=""><!-- jorge guapo -->AÑADIR SALDO</a></li>    
+            <li><a href="Perfil.php"><!-- jorge guapo -->PERFIL</a></li>    
             <li><a href="Contacto\Contacto.html">CONTACTO</a></li>
             <!-- SI EL USUARIO QUE HA INGRESADO ES UN ADMINISTRADOR, PODRA VER EL PANEL DE CONTROL-->
             <?php 
