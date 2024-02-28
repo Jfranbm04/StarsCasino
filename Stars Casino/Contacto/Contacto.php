@@ -20,7 +20,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
         mysqli_query($con,$ins); //Ejecutamos el insert, si ya existe el contacto muestra un mensaje de error
         $contactoCorrecto = true;
     }catch(Exception $ex){
-        echo "<h2>EL CONTACTO YA ESTA REGISTRADO</h2><br>". $ex->getMessage();
+        echo "<html>";
+        echo "<head>";
+        echo "<title>ERROR CONTACTO</title>";
+        echo "<style>";
+        echo "h2,h3 { color: white; }";
+        echo ".container { 
+            background-color: red;
+            border: solid 3px;
+            padding: 2%;
+        }";
+        echo "</style>";
+        echo "</head>";
+        echo "<body>";
+        echo "<div class=\"container\">";
+        echo "<h2>EL CONTACTO YA ESTA REGISTRADO</h2><br>". "<h3><b>ERROR: ".$ex->getMessage()."</b></h3>";
+        echo "</div>";
+        echo "</body>";
+        echo "</html>";
     }finally{
         //Cerramos la conexión, ocurra o no algún error
         mysqli_close($con);

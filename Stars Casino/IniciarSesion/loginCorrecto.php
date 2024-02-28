@@ -19,7 +19,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
         if(mysqli_num_rows($res) > 0){ //Si la consulta es correcta y nos devuelve algún registro, el usuario existe
             $loginCorrecto = true;
         }else{
-            echo "<h2>EL CORREO O LA CONTRASEÑA SON INCORRECTOS</h2>";
+            echo "<html>";
+            echo "<head>";
+            echo "<title>ERROR LOGIN</title>";
+            echo "<style>";
+            echo "h2 { color: white; }";
+            echo ".container { 
+                background-color: red;
+                border: solid 3px;
+                padding: 2%;
+            }";
+            echo "</style>";
+            echo "</head>";
+            echo "<body>";
+            echo "<div class=\"container\">";
+            echo "<h2>EL EMAIL O LA CONTRASEÑA SON INCORRECTOS</h2>";
+            echo "</div>";
+            echo "</body>";
+            echo "</html>";
         }
     }
     
