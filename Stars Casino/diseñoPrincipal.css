@@ -41,11 +41,11 @@
     padding: 10px; 
     border-radius: 10px; 
     font-family: LilitaOne; 
-    margin-top: 140px; 
-    margin-right: 20px;
+    margin-top: 70px; 
+    margin-left: 20px;
     position: absolute; 
     top: 0; 
-    right: 0; 
+    left: 0; 
 }
 
 
@@ -53,7 +53,21 @@
 .letrero {
     margin-right: 20px;
 }
+/* Cerrar sesión */
+.cerrarSesion {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000; 
+    color: #ffffff; 
+    text-decoration: none; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px;
+}
 
+.cerrarSesion:hover {
+    background-color: #cc0000; 
+}
 
 /* Cuerpo de la página */
 body {

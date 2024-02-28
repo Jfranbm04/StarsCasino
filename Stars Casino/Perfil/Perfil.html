@@ -14,34 +14,34 @@
 
   <!-- Formulario-->
   <div class="contact_form">
-
     <div class="formulario">      
-      <h1>Perfil</h1>
-        <h3>Consulta tus datos, o modifícalos si es necesario</h3>
+      <div class="form-header">
+        <h1 class="titulo">Perfil</h1> 
+        <button type="submit" name="enviar_formulario" id="enviar"><p>Modificar mis datos</p></button>
+      </div>
+      <!-- Aqui solo se pueden ver tus datos-->
+      <form action="Perfil.php" method="POST">       
+            <p>
+              <label for="Correo" class="colocar_Correo">Correo</label>
+              <input type="text" name="Correo"  placeholder="Correo" required readonly>
+            </p>
 
-          <form action="Perfil.php" method="POST">       
-                <p>
-                  <label for="usuario" class="colocar_usuario">Usuario</label>
-                  <p><input type="text" name="usuario"  placeholder="Usuario" required></p>
-                </p>
-              
-                <p>
-                  <label for="contraseña" class="colocar_contraseña">Contraseña</label>
-                  <p><input type="password" name="contraseña"  placeholder="Contraseña" required></p>
-                </p>
-            
-                <p>
-                  <label for="saldo" class="colocar_saldo">Añadir Saldo</label>
-                  <p><input type="number" min="1" name="saldo" placeholder="Saldo" required></p>
-                </p>    
-              
-                <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+            <p>
+              <label for="usuario" class="colocar_usuario">Usuario</label>
+              <input type="text" name="usuario"  placeholder="Usuario" required readonly>
+            </p>
+          
+            <p>
+              <label for="contraseña" class="colocar_contraseña">Contraseña</label>
+              <input type="password" name="contraseña"  placeholder="Contraseña" required readonly>
+            </p>
+        
+            <p>
+              <label for="saldo" class="colocar_saldo">Tu saldo</label>
+              <input type="number" min="1" name="saldo" placeholder="Saldo" required readonly>
+            </p>    
 
-                <p class="aviso">
-                  <span class="obligatorio"> * </span>los campos son obligatorios.
-                </p>          
-            
-          </form>
+      </form>
     </div>  
   </div>
 

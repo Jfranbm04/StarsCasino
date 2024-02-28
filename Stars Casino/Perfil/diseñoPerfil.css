@@ -1,26 +1,26 @@
 /* Contenedores generales*/
 body{
     background-image: url("../ImagenesPrincipal/brawlLobbyBackground.jpg");
-  }
-  
-  /* Estilos adicionales */
-  @font-face {
-  font-family: nougat;
-  src: url(../../Fuentes/nougat/Nougat-ExtraBlack.ttf);
-  }
-  @font-face {
+}
+
+/* Estilos adicionales */
+@font-face {
+    font-family: nougat;
+    src: url(../../Fuentes/nougat/Nougat-ExtraBlack.ttf);
+}
+@font-face {
     font-family: LilitaOne;
-    src: url(../../Fuentes/Lilita_One/LilitaOne-Regular.ttf);
-  }
-  
-  
-  .titulo{
+    src: url(../Fuentes/Lilita_One/LilitaOne-Regular.ttf);
+}
+
+.titulo{
     text-align: center;
-    color:#fcfcfc;
+    color:#000000;
     font-size: 38px;
     font-family: LilitaOne;
-  }
-  .volver {
+}
+
+.volver {
     display: inline-block;
     padding: 10px 20px;
     background-color: #333;
@@ -28,30 +28,35 @@ body{
     text-decoration: none;
     border-radius: 5px;
     font-family: LilitaOne;
-  }
-  
-    .contact_form{
-        background-color: #fcfcfc;
-        border-radius: 30px;
-        display: flex;
-        justify-content: center;
-        padding: 100px;
-        align-items: center;
-        flex-direction: column;
-        margin: 6em auto;
-        width: 30%;
-        height: auto;
-        font-size: 20px;
-    }
-  
-  .formulario{
+}
+
+.contact_form{
+    background-color: #fcfcfc;
+    border-radius: 30px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    margin: 3em auto;
+    width: 40%;
+    height: auto;
+    font-size: 20px;
+}
+
+.formulario{
     font-family: LilitaOne;
     color:#000000;
-  }
-  
-  input{
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Añadido para separar el encabezado del formulario */
+}
+
+input{
     background-color: #fbfbfb; 
-    width: 408px; 
+    width: 100%; /* Cambiado para que el ancho se ajuste automáticamente */
     height: 40px; 
     border-radius: 5px;  
     border-style: solid; 
@@ -59,23 +64,22 @@ body{
     margin-top: 10px;  
     padding-left: 10px;
     margin-bottom: 20px; 
-  }
-  
-  button{
-    padding-left: 5px;
-    padding-right: 5px;   
-    margin-bottom: 20px; 
-    margin-top: 10px;   
+}
+.contact_form form p {
+    width: 70%; /* Para que los inputs ocupen la mitad del ancho */
+}
+
+
+button {
     background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
-    border-style: solid; 
-    border-radius: 10px;  
-    width: 420px;   
+    border-style: solid;
+    border-radius: 10px;
     cursor: pointer;
     font-family: LilitaOne;
-    font-size: 20px;
-  }
-  
-  
-  button p{
+    font-size: 14px; /* Tamaño más pequeño */
+    padding: 5px 10px; /* Padding más pequeño */
+}
+
+button p{
     color: #fff; 
-  }
+}

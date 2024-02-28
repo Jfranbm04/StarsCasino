@@ -1,5 +1,5 @@
 <?php
-session_start(); // Iniciar sesión PHP si no lo has hecho antes
+session_start(); // Iniciar sesión PHP
 
 // Almacenamos los datos del usuario que ha entrado
 $correo = $_SESSION['correo_user'];
@@ -27,11 +27,11 @@ $rol = $_SESSION['rol'];
             padding: 10px;
             border-radius: 10px;
             font-family: 'LilitaOne'; 
-            margin-top: 140px;
-            margin-right: 20px;
+            margin-top: 70px;
+            margin-left: 20px;
             position: absolute;
             top: 0;
-            right: 0;
+            left: 0;
         }
     </style>
 
@@ -46,42 +46,44 @@ $rol = $_SESSION['rol'];
 
         <!--Mostrar Cookies-->
         <div class="cookies">
-        <?php
-            // Conexión a la base de datos y consulta de los usuarios
-            include 'conexion.php';
+            <?php
+                // Conexión a la base de datos y consulta de los usuarios
+                include 'conexion.php';
 
-            // Mostrar la información del usuario
-            //Saco el nombre del usuario y lo muestro
-            //Consulta select
-            $select = "SELECT * FROM usuarios WHERE Correo = '$correo'";
-            $res = mysqli_query($con,$select);
+                // Mostrar la información del usuario
+                //Saco el nombre del usuario y lo muestro
+                //Consulta select
+                $select = "SELECT * FROM usuarios WHERE Correo = '$correo'";
+                $res = mysqli_query($con,$select);
 
-            if($res){
-                if(mysqli_num_rows($res) > 0){ //Si la consulta es correcta y nos devuelve algún registro, el usuario existe            
-                    $row = mysqli_fetch_row($res); //Estoy extrayendo el registro completo de la consulta select
-                    $nombre = $row[0]; //Obtengo el valor del nombre de ese registro 
+                if($res){
+                    if(mysqli_num_rows($res) > 0){ //Si la consulta es correcta y nos devuelve algún registro, el usuario existe            
+                        $row = mysqli_fetch_row($res); //Estoy extrayendo el registro completo de la consulta select
+                        $nombre = $row[0]; //Obtengo el valor del nombre de ese registro 
 
-                    // Liberar recursos
-                    mysqli_free_result($res);
+                        // Liberar recursos
+                        mysqli_free_result($res);
 
-                    echo "<p style='font-size: 18px;'>Bienvenido, $nombre</p>";
-                    if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
-                        echo "<p style='font-size: 18px;'>Rol: Administrador</p>";
+                        echo "<p style='font-size: 18px;'>Bienvenido, $nombre</p>";
+                        if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
+                            echo "<p style='font-size: 18px;'>Rol: Administrador</p>";
+                        }
                     }
                 }
-            }
-        ?>
-    </div>
+                
+            ?>
+            <a class= "cerrarSesion" href="EntradaScreen.html">CERRAR SESION</a>
+        </div>
 
-      <div class="letrero">
-          <img src="ImagenesPrincipal/starsCasinoLetrero.png" alt="Letrero del casino">
-      </div>
+        <div class="letrero">
+            <img src="ImagenesPrincipal/starsCasinoLetrero.png" alt="Letrero del casino">
+        </div>
     </header>
     
     <!-- Barra superior nav -->
     <nav class="menu">
         <ul>
-            <li><a href="Perfil\Perfil.html"><!-- jorge guapo -->PERFIL</a></li>    
+            <li><a href="Perfil\Perfil.html">PERFIL</a></li>    
             <li><a href="Contacto\Contacto.html">CONTACTO</a></li>
             <!-- SI EL USUARIO QUE HA INGRESADO ES UN ADMINISTRADOR, PODRA VER EL PANEL DE CONTROL-->
             <?php 
@@ -89,7 +91,7 @@ $rol = $_SESSION['rol'];
                     echo "<li><a href=\"PanelControl/panelControl.html\">PANEL DE CONTROL</a></li>";
                 }
             ?>
-            <li><a href="EntradaScreen.html">CERRAR SESION</a></li>
+            <!-- <li><a href="EntradaScreen.html">CERRAR SESION</a></li> -->
         </ul> 
     </nav>
 
