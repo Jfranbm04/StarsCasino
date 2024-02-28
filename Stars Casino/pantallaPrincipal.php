@@ -40,34 +40,39 @@
        
       <?php
         // Conexión a la base de datos y consulta de los personajes
-        include '../conexion.php';
+        include 'conexion.php';
 
         $sql = "SELECT * FROM brawler";
-        $result = $conexion->query($sql);
+        $result = $con->query($sql);
 
-        // Iterar sobre los resultados y mostrar cada tarjeta de personaje
+        // Itero sobre los resultados y muestro cada tarjeta de personaje
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo '<div class="card">';
                 echo '<h4>' . $row["Nombre"] . '</h4>';
                 echo '<p>Calidad: ' . $row["Calidad"] . '</p>';
                 echo '<p>Nivel: ' . $row["Nivel"] . '</p>';
-                // Puedes agregar más campos aquí según sea necesario
+
+                // Aqui podríamos añadir la imagen del brawler 
                 echo '</div>';
             }
         } else {
             echo "No hay brawlers en la colección";
         }
 
-        // Cerrar conexión a la base de datos
-        $conexion->close();
+        // Cerrar conexión
+        if ($con) {
+            $con->close();
+        }
     ?>
-
-      
+ 
   </div>
 
 	</main>
 
+    <!--Mostrar Cookies-->
+    <p>Usuario: <?php echo $_COOKIE['correo_user'];
+        echo $_COOKIE['rol']; ?></p>
 
   <!-- Footer -->
 	<footer>
@@ -81,10 +86,6 @@
         <p class="Copyright">Copyright @2024 | Supercell Studios</a></p>
   </footer>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
-  <!--Mostrar Cookies-->
-  <p>Usuario: <?php echo $_COOKIE['correo_user'];
-    echo $_COOKIE['rol']; ?></p>
 
 </body>
 </html>
