@@ -11,21 +11,22 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     $saldo = $_POST['saldo'];
     $perfilCorrecto = false;
 
-    //Código insertar registro en la BD
-    $ins = "ey";
-    echo $ins;
+    //Código update usuario en la BD
+    $ins = "UPDATE usuarios SET NombreUsuario = '$user', Contraseña = '$psw', Saldo = '$saldo'
+            WHERE Correo = '$correo'"; //Falta la variable "$correo", necesitamos tenerla por parametro
 
-    /*FALTAN COZA*/
-    
+    $res = mysqli_query($con,$ins); //Ejecutamos el update, si es correcto se vera algun registro afectado
+    //Lo almacenamos en la variable "$res", es un boleano; comprobar con if si ha ido todo gucci
 
-    mysqli_query($con,$ins); //Ejecutamos el update, si ya existe el contacto muestra un mensaje de error
+    //COPIAR CODIGO modBrawler.php
+    //.....
     $perfilCorrecto = true;
     
     //Cerramos la conexión, ocurra o no algún error
     mysqli_close($con);
 
     //---------------------------------------------------
-    //Si el contacto es correcto nos envia a la página de inicio
+    //Si el perfil es correcto nos envia a la página principal
     if($perfilCorrecto){
         header("Location: pantallaPrincipal.php");
         exit();
