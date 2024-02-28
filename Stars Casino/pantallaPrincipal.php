@@ -1,3 +1,11 @@
+<?php
+session_start(); // Iniciar sesión PHP si no lo has hecho antes
+
+// Almacenamos los datos del usuario que ha entrado
+$correo = $_SESSION['correo_user'];
+$rol = $_SESSION['rol'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +34,12 @@
         <ul>
             <li><a href=""><!-- jorge guapo -->AÑADIR SALDO</a></li>    
             <li><a href="Contacto\Contacto.html">CONTACTO</a></li>
-            <li><a href="PanelControl/panelControl.html">PANEL DE CONTROL</a></li>
+            <!-- SI EL USUARIO QUE HA INGRESADO ES UN ADMINISTRADOR, PODRA VER EL PANEL DE CONTROL-->
+            <?php 
+                if(strcmp($rol,"admin") == 0){
+                    echo "<li><a href=\"PanelControl/panelControl.html\">PANEL DE CONTROL</a></li>";
+                }
+            ?>
             <li><a href="EntradaScreen.html">CERRAR SESION</a></li>
         </ul> 
     </nav>
@@ -71,29 +84,17 @@
 
 	</main>
 
-    <!--Mostrar Cookies-->
+<!--Mostrar Cookies-->
 <?php
-session_start(); // Iniciar sesión PHP si no lo has hecho antes
-
-// Verificar si el usuario ha iniciado sesión
-if (isset($_SESSION['correo_user']) && isset($_SESSION['rol'])) {
-    $correo = $_SESSION['correo_user'];
-    $rol = $_SESSION['rol'];
-    // Mostrar la información del usuario
-    echo "<p>Bienvenido, $correo</p>";
-    if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
-        echo "<p>Rol: Administrador</p>";
-        // Aquí puedes mostrar funcionalidades adicionales para administradores
-    } else { //En caso contrario, es un usuario sin privilegios
-        echo "<p>Rol: Usuario</p>";
-        // Aquí puedes mostrar funcionalidades específicas para usuarios normales
-        
-    }
-    // También puedes mostrar cualquier otra información específica del usuario
-} else {
-    // Si el usuario no ha iniciado sesión, redirigirlo al formulario de inicio de sesión
-    header("Location: formularioInicioSesion.php");
-    exit();
+// Mostrar la información del usuario
+echo "<p>Bienvenido, $correo</p>";
+if (strcmp($rol,"admin") == 0) { //Funcion equals, si nos devuelve un 0, ha entrado un administrador
+      echo "<p>Rol: Administrador</p>";
+      // Aquí puedes mostrar funcionalidades adicionales para administradores
+} else { //En caso contrario, es un usuario sin privilegios
+      echo "<p>Rol: Usuario</p>";
+      // Aquí puedes mostrar funcionalidades específicas para usuarios normales
+      
 }
 ?>
 
