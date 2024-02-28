@@ -10,7 +10,6 @@
     <title>Inicio</title>
 </head>
 <body>
-    
     <!-- Portada página -->
     <header class="header">
       <div class="logoWeb">
@@ -78,9 +77,6 @@
 	</main>
 
 
-
-
-
   <!-- Footer -->
 	<footer>
         <div class="quienesSomos">QUIENES SOMOS</div>
@@ -93,5 +89,10 @@
         <p class="Copyright">Copyright @2024 | Supercell Studios</a></p>
   </footer>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <!--Mostrar Cookies-->
+  <p>Usuario: <?php echo $_COOKIE['correo_user'];
+    echo $_COOKIE['rol']; ?></p>
+
 </body>
 </html>

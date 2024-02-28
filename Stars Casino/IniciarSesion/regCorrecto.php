@@ -24,6 +24,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     try{
         mysqli_query($con,$ins); //Ejecutamos el insert, si ya existe el usuario muestra un mensaje de error
         $regCorrecto = true;
+        //Creamos la cookie
+        setcookie("correo_user", "hola", time() + 86400, "/"); // Cookie válida por 1 día
+        setcookie("rol", "user", time() + 86400, "/"); // Cookie válida por 1 día
     }catch(Exception $ex){
         echo "<html>";
         echo "<head>";

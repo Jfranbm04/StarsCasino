@@ -18,6 +18,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     if($res){
         if(mysqli_num_rows($res) > 0){ //Si la consulta es correcta y nos devuelve algún registro, el usuario existe
             $loginCorrecto = true;
+            //Creamos la cookie
+            setcookie("correo_user", "hola", time() + 86400, "/"); // Cookie válida por 1 día
+            setcookie("rol", "user", time() + 86400, "/"); // Cookie válida por 1 día
         }else{
             echo "<html>";
             echo "<head>";
