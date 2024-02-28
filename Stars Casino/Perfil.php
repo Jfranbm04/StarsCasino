@@ -15,9 +15,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     $ins = "ey";
     echo $ins;
 
+    /*FALTAN COZA*/
     
 
-    
     mysqli_query($con,$ins); //Ejecutamos el update, si ya existe el contacto muestra un mensaje de error
     $perfilCorrecto = true;
     
@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     //---------------------------------------------------
     //Si el contacto es correcto nos envia a la página de inicio
     if($perfilCorrecto){
-        header("Location: ../pantallaPrincipal.php");
+        header("Location: pantallaPrincipal.php");
         exit();
     }
 }
