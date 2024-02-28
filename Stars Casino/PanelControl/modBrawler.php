@@ -1,25 +1,33 @@
 <?php
+include '../conexion.php'; // Importamos el fichero de conexión con la BD php
 
-include '../conexion.php'; //Importamos el fichero de conexion con la BD php
-
-if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario es POST
+if ($_SERVER['REQUEST_METHOD'] == "POST") { // Si el método de nuestro formulario es POST
     
-    //Los datos siempre van a tener contenido
+    // Los datos siempre van a tener contenido
     $nombre = $_POST['nombre'];
     $calidad = $_POST['calidad'];
     $nivel = $_POST['nivel'];
     $brawlCorrecto = false;
 
-    //Código modificar brawler en la BD
-    $ins = "UPDATE brawler SET Calidad = '$calidad',Nivel = '$nivel' 
+    // Obtener información de la imagen
+    $nombreImagen = $_FILES['imagen']['name'];
+    $tipoImagen = $_FILES['imagen']['type'];
+    $tamañoImagen = $_FILES['imagen']['size'];
+    $imagenTmp = $_FILES['imagen']['tmp_name'];
+
+    // Leer el contenido de la imagen en bytes
+    $imagenBinario = addslashes(file_get_contents($imagenTmp));
+
+    // Código para modificar brawler en la BD
+    $ins = "UPDATE brawler SET Calidad = '$calidad', Nivel = '$nivel', Imagen = '$imagenBinario' 
             WHERE Nombre = '$nombre'";
 
-    $res = mysqli_query($con,$ins);
+    $res = mysqli_query($con, $ins);
 
-    if($res){
-        // Verificamos si se afectaron filas (si se modifico algún registro)
+    if ($res) {
+        // Verificamos si se afectaron filas (si se modificó algún registro)
         $filasAfectadas = mysqli_affected_rows($con);
-    
+
         if ($filasAfectadas > 0) {
             $brawlCorrecto = true; // Si el update es correcto, se afectaron filas y el brawler existe en nuestra colección
         } else {
@@ -43,17 +51,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
             echo "</html>";
         }
     }
-    
+
     // Cerramos la conexión
     mysqli_close($con);
 
     //---------------------------------------------------
-    //Si el brawler es nuevo en la coleccion, nos envia al panel de control
-    if($brawlCorrecto){
+    // Si el brawler se modificó correctamente, nos envía al panel de control
+    if($brawlCorrecto) {
         header("Location: panelControl.html");
         exit();
     }
 }
-
-
 ?>
