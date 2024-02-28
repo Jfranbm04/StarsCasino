@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario e
     //---------------------------------------------------
     //Si el contacto es correcto nos envia a la página de inicio
     if($contactoCorrecto){
-        header("Location: ../pantallaPrincipal.html");
+        header("Location: ../pantallaPrincipal.php");
         exit();
     }
 }

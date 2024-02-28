@@ -7,7 +7,7 @@
     <!-- Icono -->
     <link rel="icon" href="ImagenesPrincipal/IconoStarsCasino.png" type="image/png">
     <link rel="stylesheet" href="diseñoPrincipal.css">
-    <title>Inicio</title>
+    <title>Pantalla Principal</title>
 </head>
 <body>
     <!-- Portada página -->
