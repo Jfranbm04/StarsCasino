@@ -11,7 +11,7 @@
 
 /* Estilo para el encabezado */
 .header {
-    position: relative; /* Establecemos la posición relativa para poder posicionar la imagen de forma absoluta dentro de este contenedor */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;

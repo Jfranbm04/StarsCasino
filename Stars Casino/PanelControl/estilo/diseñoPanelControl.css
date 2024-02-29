@@ -1,20 +1,20 @@
 
 
 
-/* Contenedores generales*/
-body{
-    background-image: url("../../ImagenesPrincipal/brawlLobbyBackground.jpg");
-}
+  /* Contenedores generales*/
+  body{
+      background-image: url("../../ImagenesPrincipal/brawlLobbyBackground.jpg");
+  }
 
-/* Estilos adicionales */
-@font-face {
-  font-family: nougat;
-  src: url(../../Fuentes/nougat/Nougat-ExtraBlack.ttf);
-}
-@font-face {
-  font-family: LilitaOne;
-  src: url(../../Fuentes/Lilita_One/LilitaOne-Regular.ttf);
-}   
+  /* Estilos adicionales */
+  @font-face {
+    font-family: nougat;
+    src: url(../../Fuentes/nougat/Nougat-ExtraBlack.ttf);
+  }
+  @font-face {
+    font-family: LilitaOne;
+    src: url(../../Fuentes/Lilita_One/LilitaOne-Regular.ttf);
+  }   
     
   .titulo{
     text-align: center;
@@ -30,6 +30,32 @@ body{
     text-decoration: none;
     border-radius: 5px;
     font-family: LilitaOne;
+  }
+
+  /* Estilo para el encabezado */
+  .header {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  /* Estilo para el contenedor del logo */
+  .logoWeb {
+    margin: 20px;
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+  }
+
+  /* Estilo para el logo */
+  .logoWeb img {
+    width: 100px; 
+    height: auto;
+    align-items: center;
+    border-radius: 10px;
   }
 
   .buttons{
