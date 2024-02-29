@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Juanfran/Jorge" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/diseñoAñadir.css">
+    
+    <link rel="icon" href="../ImagenesPrincipal/IconoStarsCasino.png" type="image/png">
+    <title>Modificar saldo usuario</title>
+</head>
+<body>
+    <a class="volver"  href="panelControl.html">VOLVER AL PANEL</a>
+    <header>
+        <p class="titulo">Modificar saldo usuario</p>
+    </header>
+
+    
+    <!-- Formulario-->
+  <div class="contact_form">
+
+    <div class="formulario">      
+        <h3>Modifica el saldo del usuario</h3>
+
+          <form action="modificarSaldo.php" method="POST">  
+                <p>
+                  <label for="nombre" class="colocar_nombre">Nombre:</label>
+                  <input type="text" name="nombre" placeholder="Escribe el nombre" required>
+                </p>
+
+                <p>
+                    <label for="saldo" class="colocar_Nivel">Saldo:</label>
+                    <input type="number" name="saldo" placeholder="Escribe el saldo nuevo del usuario" required>
+                  </p>
+
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Modificar saldo</p></button>
+          
+          </form>
+    </div>  
+  </div>
+
+
+</body>
+</html> 

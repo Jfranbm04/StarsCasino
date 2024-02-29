@@ -65,10 +65,18 @@ body{
     margin: 10px; 
   }
 
-.bCrud h2 {
-    font-size: 24px;
-}
-  
+  .bCrud h2 {
+      font-size: 24px;
+  }
+    
+  .divider {
+    width: 80%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.3); /* línea semitransparente */
+    margin: 20px 0;
+  }
+
+
   /* Enlaces */
   a {
     display: flex;
