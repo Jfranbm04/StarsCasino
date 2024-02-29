@@ -1,35 +1,56 @@
-
 <?php
+  //Extraemos los datos del usuario conectado
+  include '../conexion.php';
 
-include 'conexion.php'; //Importamos el fichero de conexion con la BD php
+  //Ejemplo fijo para probar
+  $ins = "SELECT * FROM usuarios WHERE Correo = 'm@gmail.com'";
 
-if($_SERVER['REQUEST_METHOD'] == "POST"){ //Si el metodo de nuestro formulario es POST
-    
-    //Los datos nunca van a estar vacíos, son todos obligatorios
-    $user = $_POST['usuario'];
-    $psw = $_POST['contraseña'];
-    $saldo = $_POST['saldo'];
-    $perfilCorrecto = false;
-
-    //Código insertar registro en la BD
-    $ins = "ey";
-    echo $ins;
-
-    /*FALTAN COZA*/
-    
-
-    mysqli_query($con,$ins); //Ejecutamos el update, si ya existe el contacto muestra un mensaje de error
-    $perfilCorrecto = true;
-    
-    //Cerramos la conexión, ocurra o no algún error
-    mysqli_close($con);
-
-    //---------------------------------------------------
-    //Si el contacto es correcto nos envia a la página de inicio
-    if($perfilCorrecto){
-        header("Location: pantallaPrincipal.php");
-        exit();
-    }
-}
-
+  $res = mysqli_query($con,$ins);
+  $row = mysqli_fetch_row($res); //Estoy extrayendo el registro completo de la consulta select
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Juanfran/Jorge" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="diseñoPerfil.css">
+    <!-- Icono -->
+    <link rel="icon" href="../ImagenesPrincipal/IconoStarsCasino.png" type="image/png">
+    <title>Perfil</title>
+</head>
+<body>
+  <a class="volver" href="../pantallaPrincipal.php">VOLVER AL INICIO</a>
+
+  <!-- Formulario-->
+  <div class="contact_form">
+    <div class="formulario">      
+      <!-- Aqui solo se pueden ver tus datos-->
+      <form>
+      <h1 class="titulo">Perfil</h1> 
+      <p>
+        <label for="Correo" class="colocar_Correo">Correo</label>
+        <input type="email" name="correo" placeholder="Correo" value="<?php echo $row[1]; ?>" readonly>
+      </p>
+
+      <p>
+        <label for="usuario" class="colocar_usuario">Usuario</label>
+        <input type="text" name="usuario" placeholder="Usuario" value="<?php echo $row[0]; ?>" readonly>
+      </p>
+          
+      <p>
+        <label for="contraseña" class="colocar_contraseña">Contraseña</label>
+        <input type="text" name="contraseña" placeholder="Contraseña" value="<?php echo $row[2]; ?>" readonly>
+      </p>
+        
+      <p>
+        <label for="saldo" class="colocar_saldo">Tu saldo</label>
+        <input type="number" min="1" name="saldo" placeholder="Saldo" value="<?php echo $row[4]; ?>" readonly>
+      </p> 
+      </form>
+    </div>  
+  </div>
+
+</body>
+</html>
