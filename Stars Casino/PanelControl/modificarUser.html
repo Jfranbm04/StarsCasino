@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Juanfran/Jorge" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/diseñoAñadir.css">
+    
+    <link rel="icon" href="../ImagenesPrincipal/IconoStarsCasino.png" type="image/png">
+    <title>Modificar usuario</title>
+</head>
+<body>
+    <a class="volver"  href="panelControl.html">VOLVER AL PANEL</a>
+    <header>
+        <p class="titulo">Modificar usuario</p>
+    </header>
+
+    
+    <!-- Formulario-->
+  <div class="contact_form">
+
+    <div class="formulario">      
+        <h3>Modifica el usuario</h3>
+
+          <form action="modificarUser.php" method="POST"> 
+                <p>
+                  <label for="correo" class="colocar_correo">Correo:</label>
+                  <input type="email" name="correo" placeholder="Escribe tu correo" required>
+                </p>
+            
+                <p>
+                  <label for="nombre" class="colocar_nombre">Nombre:</label>
+                  <input type="text" name="nombre" placeholder="Escribe el nombre">
+                </p>
+
+                <p>
+                  <label for="saldo" class="colocar_Nivel">Saldo:</label>
+                  <input type="number" min="0" max="9999" name="saldo" id="saldo" placeholder="Escribe el saldo nuevo del usuario">
+                </p>
+
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Modificar usuario</p></button>
+          </form>
+
+          
+          <!-- Script para que el saldo sea 12 como máximo -->
+          <script>
+            // Obtener el elemento de entrada del nivel
+            var saldoInput = document.getElementById("saldo");
+
+            // Listener para cuando se escribe un número
+            saldoInput.addEventListener("input", function () {
+            // Obtener el valor actual del campo de entrada
+            var valor = parseInt(saldoInput.value);
+            if (valor > 9999) {
+              // Si es mayor que 9999, número = 9999
+              saldoInput.value = 9999;
+            } if (valor < 0) {
+              // Si es menor que 0, número = 0
+              saldoInput.value = 0;
+            }
+            });
+          </script>
+
+    </div>  
+  </div>
+
+
+</body>
+</html> 
