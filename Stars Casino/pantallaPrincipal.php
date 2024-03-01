@@ -35,7 +35,6 @@ $rol = $_SESSION['rol'];
         }
     </style>
 
-
 </head>
 <body>
     <!-- Portada página -->

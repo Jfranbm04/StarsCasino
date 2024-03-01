@@ -2,11 +2,18 @@
   //Extraemos los datos del usuario conectado
   include '../conexion.php';
 
-  //Ejemplo fijo para probar
-  $ins = "SELECT * FROM usuarios WHERE Correo = 'm@gmail.com'";
+  session_start(); // Iniciar sesión PHP
+
+  //Recibir correo del usuario autenticado
+  $correo = $_SESSION['correo_user'];
+
+  //Consulta todos los datos de dicho usuario
+  $ins = "SELECT * FROM usuarios WHERE Correo = '$correo'";
 
   $res = mysqli_query($con,$ins);
   $row = mysqli_fetch_row($res); //Estoy extrayendo el registro completo de la consulta select
+  // Liberar recursos
+  mysqli_free_result($res);
 ?>
 
 <!DOCTYPE html>
