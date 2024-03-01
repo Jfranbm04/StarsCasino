@@ -13,14 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { // Si el método de nuestro formular
     $ins = "";
 
     //Comprobar que los datos son correctos
-    if(isset($_POST['nombre']) && $_POST['nombre'] !== '' && isset($_POST['saldo']) && $_POST['saldo'] !== ''){
+    if(isset($_POST['nombre']) && trim($_POST['nombre']) !== '' && isset($_POST['saldo']) && $_POST['saldo'] !== ''){
         $nombre = $_POST['nombre'];
         $saldo = $_POST['saldo'];
         $ins = "UPDATE usuarios SET NombreUsuario = '$nombre', Saldo = '$saldo' 
                 WHERE Correo = '$correo'";
         $datosCorrectos = true;
     }else{
-        if(isset($_POST['nombre']) && $_POST['nombre'] !== ''){
+        if(isset($_POST['nombre']) && trim($_POST['nombre']) !== ''){
             $nombre = $_POST['nombre'];
             $ins = "UPDATE usuarios SET NombreUsuario = '$nombre'
                     WHERE Correo = '$correo'";
